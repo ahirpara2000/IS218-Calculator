@@ -26,6 +26,10 @@ class MyTestCase(unittest.TestCase):
 
     def test_division_method_calculator(self):
         calculator = Calculator()
+        self.assertEqual(calculator.divide(3, 2), 1.5)
+
+    def test_square_method_calculator(self):
+        calculator = Calculator()
         self.assertEqual(calculator.square(3), 9)
 
 
