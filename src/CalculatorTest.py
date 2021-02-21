@@ -10,11 +10,11 @@ class MyTestCase(unittest.TestCase):
 
     def test_result_property_calculator(self):
         calculator = Calculator()
-        self.assertEqual(calculator.result, 4)
+        self.assertEqual(calculator.result, 0)
 
     def test_add_method_calculator(self):
         calculator = Calculator()
-        self.assertEqual(calculator.add(2, 2), 4)
+        self.assertEqual(calculator.subtract(2, 2), 0)
 
 
 if __name__ == '__main__':
