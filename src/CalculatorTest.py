@@ -63,13 +63,21 @@ class MyTestCase(unittest.TestCase):
             val1 = float(val['Value 1'])
             val2 = float(val['Value 2'])
             result = float(val['Result'])
-            
+
             self.assertEqual(calculator.divide(val2, val1), result)
 
     # 7. Check square method
     def test_square_method_calculator(self):
         calculator = Calculator()
-        self.assertEqual(calculator.square(3), 9)
+
+        csv_data = ReadCsv("//./src/Unit Test Square.csv").data
+
+        calculator = Calculator()
+        for val in csv_data:
+            val1 = float(val['Value 1'])
+            result = float(val['Result'])
+
+            self.assertEqual(calculator.square(val1), result)
 
     # 8. Check square root method
     def test_square_root_method_calculator(self):
