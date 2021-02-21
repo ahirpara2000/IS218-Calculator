@@ -39,6 +39,11 @@ class MyTestCase(unittest.TestCase):
         calculator = Calculator()
         self.assertEqual(calculator.square(3), 9)
 
+    # 8. Check square root method
+    def test_square_root_method_calculator(self):
+        calculator = Calculator()
+        self.assertEqual(calculator.square_root(9), 3)
+
 
 if __name__ == '__main__':
     unittest.main()
