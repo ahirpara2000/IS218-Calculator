@@ -17,25 +17,42 @@ class MyTestCase(unittest.TestCase):
 
     # 3. Check addition method
     def test_add_method_calculator(self):
-        csv_data = ReadCsv("//./src/Unit Test Addition.csv")
-
         calculator = Calculator()
 
-        for val in csv_data.data:
+        csv_data = ReadCsv("//./src/Unit Test Addition.csv").data
+
+        for val in csv_data:
             val1 = int(val['Value 1'])
             val2 = int(val['Value 2'])
             result = int(val['Result'])
+
             self.assertEqual(calculator.add(val1, val2), result)
+
+        del csv_data
 
     # 4. Check subtraction method
     def test_subtract_method_calculator(self):
+        csv_data = ReadCsv("//./src/Unit Test Subtraction.csv").data
+
         calculator = Calculator()
-        self.assertEqual(calculator.subtract(2, 2), 0)
+        for val in csv_data:
+            val1 = int(val['Value 1'])
+            val2 = int(val['Value 2'])
+            result = int(val['Result'])
+
+            self.assertEqual(calculator.subtract(val2, val1), result)
 
     # 5. Check multiplication method
     def test_multiplication_method_calculator(self):
+        csv_data = ReadCsv("//./src/Unit Test Multiplication.csv").data
+
         calculator = Calculator()
-        self.assertEqual(calculator.multiply(3, 2), 6)
+        for val in csv_data:
+            val1 = int(val['Value 1'])
+            val2 = int(val['Value 2'])
+            result = int(val['Result'])
+            
+            self.assertEqual(calculator.multiply(val1, val2), result)
 
     # 6. Check division method
     def test_division_method_calculator(self):
