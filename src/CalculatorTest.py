@@ -1,5 +1,6 @@
 import unittest
 from Calculator import Calculator
+from CSVreader import ReadCsv
 
 
 class MyTestCase(unittest.TestCase):
@@ -16,8 +17,15 @@ class MyTestCase(unittest.TestCase):
 
     # 3. Check addition method
     def test_add_method_calculator(self):
+        csv_data = ReadCsv("//./src/Unit Test Addition.csv")
+
         calculator = Calculator()
-        self.assertEqual(calculator.add(2, 2), 4)
+
+        for val in csv_data.data:
+            val1 = int(val['Value 1'])
+            val2 = int(val['Value 2'])
+            result = int(val['Result'])
+            self.assertEqual(calculator.add(val1, val2), result)
 
     # 4. Check subtraction method
     def test_subtract_method_calculator(self):
