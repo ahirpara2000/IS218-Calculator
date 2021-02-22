@@ -82,7 +82,15 @@ class MyTestCase(unittest.TestCase):
     # 8. Check square root method
     def test_square_root_method_calculator(self):
         calculator = Calculator()
-        self.assertEqual(calculator.square_root(9), 3)
+
+        csv_data = ReadCsv("//./src/Unit Test Square Root.csv").data
+
+        calculator = Calculator()
+        for val in csv_data:
+            val1 = float(val['Value 1'])
+            result = float(val['Result'])
+
+            self.assertEqual(calculator.square_root(val1), result)
 
 
 if __name__ == '__main__':
