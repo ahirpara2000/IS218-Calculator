@@ -72,7 +72,6 @@ class MyTestCase(unittest.TestCase):
 
         csv_data = ReadCsv("//./src/Unit Test Square.csv").data
 
-        calculator = Calculator()
         for val in csv_data:
             val1 = float(val['Value 1'])
             result = float(val['Result'])
@@ -85,7 +84,6 @@ class MyTestCase(unittest.TestCase):
 
         csv_data = ReadCsv("//./src/Unit Test Square Root.csv").data
 
-        calculator = Calculator()
         for val in csv_data:
             val1 = float(val['Value 1'])
             result = float(val['Result'])
