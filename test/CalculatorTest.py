@@ -1,25 +1,28 @@
 import unittest
-from Calculator import Calculator
-from CSVreader import ReadCsv
+from calculator.Calculator import Calculator
+from CSVReader.CSVreader import ReadCsv
 
 
 class MyTestCase(unittest.TestCase):
 
+    def setUp(self) -> None:
+        self.calculator = Calculator()
+
     # 1. Check calculator instance
     def test_instantiate_calculator(self):
-        calculator = Calculator()
+        calculator = self.calculator
         self.assertIsInstance(calculator, Calculator)
 
     # 2. Check result property
     def test_result_property_calculator(self):
-        calculator = Calculator()
+        calculator = self.calculator
         self.assertEqual(calculator.result, 0)
 
     # 3. Check addition method
     def test_add_method_calculator(self):
-        calculator = Calculator()
+        calculator = self.calculator
 
-        csv_data = ReadCsv("//./src/Unit Test Addition.csv").data
+        csv_data = ReadCsv("../tests/Data/Unit Test Addition.csv").data
 
         for val in csv_data:
             val1 = int(val['Value 1'])
@@ -32,9 +35,10 @@ class MyTestCase(unittest.TestCase):
 
     # 4. Check subtraction method
     def test_subtract_method_calculator(self):
+        calculator = self.calculator
+
         csv_data = ReadCsv("//./src/Unit Test Subtraction.csv").data
 
-        calculator = Calculator()
         for val in csv_data:
             val1 = int(val['Value 1'])
             val2 = int(val['Value 2'])
@@ -44,9 +48,10 @@ class MyTestCase(unittest.TestCase):
 
     # 5. Check multiplication method
     def test_multiplication_method_calculator(self):
-        csv_data = ReadCsv("//./src/Unit Test Multiplication.csv").data
+        calculator = self.calculator
 
-        calculator = Calculator()
+        csv_data = ReadCsv("//../test/Unit Test Multiplication.csv").data
+
         for val in csv_data:
             val1 = int(val['Value 1'])
             val2 = int(val['Value 2'])
@@ -56,9 +61,10 @@ class MyTestCase(unittest.TestCase):
 
     # 6. Check division method
     def test_division_method_calculator(self):
+        calculator = self.calculator
+
         csv_data = ReadCsv("//./src/Unit Test Division.csv").data
 
-        calculator = Calculator()
         for val in csv_data:
             val1 = float(val['Value 1'])
             val2 = float(val['Value 2'])
@@ -68,7 +74,7 @@ class MyTestCase(unittest.TestCase):
 
     # 7. Check square method
     def test_square_method_calculator(self):
-        calculator = Calculator()
+        calculator = self.calculator
 
         csv_data = ReadCsv("//./src/Unit Test Square.csv").data
 
@@ -80,7 +86,7 @@ class MyTestCase(unittest.TestCase):
 
     # 8. Check square root method
     def test_square_root_method_calculator(self):
-        calculator = Calculator()
+        calculator = self.calculator
 
         csv_data = ReadCsv("//./src/Unit Test Square Root.csv").data
 
