@@ -71,9 +71,16 @@ class MyTestCase(unittest.TestCase):
             result = float(val['Result'])
 
             self.assertEqual(calculator.divide(val2, val1), result)
-            
 
-    # 7. Check square method
+    # 7. Check division method with 0
+    def test_division_method_by_zero_calculator(self):
+        calculator = self.calculator
+
+        csv_data = ReadCsv("../tests/Data/Unit Test Division.csv").data
+
+        self.assertEqual(calculator.divide(10, 0), "Error: Cannot be divided by 0.")
+
+    # 8. Check square method
     def test_square_method_calculator(self):
         calculator = self.calculator
 
@@ -85,7 +92,7 @@ class MyTestCase(unittest.TestCase):
 
             self.assertEqual(calculator.square(val1), result)
 
-    # 8. Check square root method
+    # 9. Check square root method
     def test_square_root_method_calculator(self):
         calculator = self.calculator
 
