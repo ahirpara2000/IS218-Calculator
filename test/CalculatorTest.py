@@ -37,7 +37,7 @@ class MyTestCase(unittest.TestCase):
     def test_subtract_method_calculator(self):
         calculator = self.calculator
 
-        csv_data = ReadCsv("//./src/Unit Test Subtraction.csv").data
+        csv_data = ReadCsv("../tests/Data/Unit Test Subtraction.csv").data
 
         for val in csv_data:
             val1 = int(val['Value 1'])
@@ -50,7 +50,7 @@ class MyTestCase(unittest.TestCase):
     def test_multiplication_method_calculator(self):
         calculator = self.calculator
 
-        csv_data = ReadCsv("//../test/Unit Test Multiplication.csv").data
+        csv_data = ReadCsv("../tests/Data/Unit Test Multiplication.csv").data
 
         for val in csv_data:
             val1 = int(val['Value 1'])
@@ -63,7 +63,7 @@ class MyTestCase(unittest.TestCase):
     def test_division_method_calculator(self):
         calculator = self.calculator
 
-        csv_data = ReadCsv("//./src/Unit Test Division.csv").data
+        csv_data = ReadCsv("../tests/Data/Unit Test Division.csv").data
 
         for val in csv_data:
             val1 = float(val['Value 1'])
@@ -71,12 +71,13 @@ class MyTestCase(unittest.TestCase):
             result = float(val['Result'])
 
             self.assertEqual(calculator.divide(val2, val1), result)
+            
 
     # 7. Check square method
     def test_square_method_calculator(self):
         calculator = self.calculator
 
-        csv_data = ReadCsv("//./src/Unit Test Square.csv").data
+        csv_data = ReadCsv("../tests/Data/Unit Test Square.csv").data
 
         for val in csv_data:
             val1 = float(val['Value 1'])
@@ -88,7 +89,7 @@ class MyTestCase(unittest.TestCase):
     def test_square_root_method_calculator(self):
         calculator = self.calculator
 
-        csv_data = ReadCsv("//./src/Unit Test Square Root.csv").data
+        csv_data = ReadCsv("../tests/Data/Unit Test Square Root.csv").data
 
         for val in csv_data:
             val1 = float(val['Value 1'])

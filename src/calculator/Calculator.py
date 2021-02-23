@@ -1,28 +1,9 @@
-from math import pow, sqrt
-
-
-def addition(a, b):
-    return a + b
-
-
-def subtraction(a, b):
-    return a - b
-
-
-def multiplication(a, b):
-    return a * b
-
-
-def division(a, b):
-    return round(a / b, 9)  # round to 9 decimals to match cvs test case
-
-
-def square(a):
-    return pow(a, 2)
-
-
-def square_root(a):
-    return round(sqrt(a), 9)  # round to 9 decimals to match cvs test case
+from src.calculator.operators.addition import addition
+from src.calculator.operators.subtraction import subtraction
+from src.calculator.operators.multiply import multiplication
+from src.calculator.operators.division import division
+from src.calculator.operators.square import square
+from src.calculator.operators.square_root import square_root
 
 
 class Calculator:
